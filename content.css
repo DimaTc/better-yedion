@@ -1,0 +1,116 @@
+.better-wrapper,
+.better-grades-div {
+    width: 80%;
+    margin: auto;
+
+}
+
+.dist-grades {
+    width: 40%;
+    text-decoration: underline;
+    margin: auto;
+    border-radius: 3em;
+    user-select: none;
+    cursor: pointer;
+    color: blue;
+}
+
+.dist-grades:hover {
+    box-shadow: 0 0 20px 0 rgb(72, 197, 0) inset;
+}
+
+.better-header {
+    /* background-color: #72BF44; */
+    user-select: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: white;
+    padding: .5em 0;
+    font-weight: bold;
+    font-size: 1.3em;
+    border: 1px solid black;
+    border-width: 0 0 1px 0;
+}
+
+.sorted {
+    color: red
+}
+
+.settings-btn {
+    width: 15%;
+    height: 35px;
+    cursor: pointer;
+    user-select: none;
+    background: #dde;
+    border-radius: .3em;
+    box-shadow: 3px 3px 0 1px;
+    margin: 0 0 15px 0;
+    font-weight: bold;
+    text-align: center;
+    color: #443;
+    font-size: 1.3em;
+    transition: all .2s;
+}
+
+.settings-btn:hover {
+    background-color: rgb(204, 235, 253);
+}
+
+
+.settings-btn:active {
+    color: #72BF44;
+    box-shadow: 1px 1px;
+    transform: translate(2px, 2px);
+}
+
+.better-options {
+    display: flex;
+    background-color: rgb(240, 240, 240);
+    border: 2px solid black;
+    border-radius: 0.2em;
+    width: 30%;
+    min-width: 500px;
+    justify-content: space-between;
+    padding: 0 2em;
+    margin-bottom: .3em;
+    overflow: hidden;
+    transition: max-height .2s linear, border .2s;
+}
+
+.show {
+    max-height: 500px;
+    border-width: 2px;
+
+}
+
+.hide {
+    max-height: 0;
+    border-width: 0;
+}
+
+.better-grades-div {
+    display: grid;
+    border-radius: .5em;
+    text-align: center;
+    overflow: hidden;
+}
+
+.course-grade {
+    font-weight: bold;
+}
+
+.fail {
+    color: red;
+}
+
+.course-info {
+    padding: .3em 0;
+}
+
+.odd {
+    background-color: #d7f9fc;
+}
+
+.even {
+    background-color: #b3faff;
+}
