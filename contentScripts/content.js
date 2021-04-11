@@ -3,6 +3,7 @@ let grades = [];
 let showSettings = false;
 let hideNonGrades = false;
 let hideNonPoints = false;
+let searchString = "";
 let sortLogic = { key: "", order: 1 };
 
 // default values of columns keys, will be replaced if stored locally
@@ -49,9 +50,28 @@ function addNewTable(data, keys) {
     showSettings
   );
   //Create the grade table
+  let searchBar = createSearchBar((val) => {
+    searchString = val;
+    updateTable(data, keys);
+  }, searchString);
   let table = createDataTable(data, keys, sortHandler, sortLogic.key, filterGradesAndPoints);
   parentRow.prepend(table);
+  parentRow.prepend(searchBar, searchString);
   parentRow.prepend(optionsPanel);
+}
+
+/**
+ * removes "better-grades-div" and "better-wrapper" and create new ones with the updates values
+ * @param {Object} data of the grade
+ * @param {Object} keys for column values
+ */
+function updateTable(data, keys) {
+  let parentRow = document.getElementsByClassName("row2")[0];
+  document.getElementsByClassName("better-grades-div")[0].remove();
+  let table = createDataTable(data, keys, sortHandler, sortLogic.key, filterGradesAndPoints);
+  let wrappers = document.getElementsByClassName("better-wrapper")
+  parentRow.insertBefore(table, wrappers[wrappers.length - 1].nextSibling);
+  // parentRow.append(table);
 }
 
 //Callbacks
@@ -64,6 +84,7 @@ function addNewTable(data, keys) {
 function filterGradesAndPoints(element) {
   if (hideNonGrades && !(element.courseGrade > 0)) return false;
   if (hideNonPoints && !(element.coursePoints > 0)) return false;
+  if (searchString.length > 0 && !element.courseName.includes(searchString)) return false;
   return true;
 }
 
@@ -110,5 +131,6 @@ Object.keys(dataKeys).forEach((k) => {
     updateTable(grades, dataKeys);
   };
 });
+
+// Add grade table
 if (grades.length > 0) addNewTable(grades, dataKeys);
-console.log(grades);

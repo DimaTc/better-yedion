@@ -2,7 +2,20 @@
 const SETTINGS_BTN_TEXT = "הגדרות סינון";
 const TOGGLE_GRADE_LABEL = "הסתר מקוצעות ללא ציון";
 const TOGGLE_POINT_LABEL = "הסתר ציונים ללא נקודות זכות";
+const INPUT_PLACEHOLDER = "חפש לפי שם קורס"
 //
+
+function createSearchBar(changeHandler, searchString) {
+  let wrapper = document.createElement("div");
+  let input = document.createElement("input");
+  input.onkeyup = (e) => changeHandler(e.target.value);
+  input.type = "text";
+  input.placeholder = INPUT_PLACEHOLDER;
+  input.value = searchString;
+  wrapper.className = "better-wrapper";
+  wrapper.append(input);
+  return wrapper;
+}
 
 /**
  *
@@ -128,15 +141,4 @@ function createCourseRow(data, keys) {
     });
 
   return elements;
-}
-
-/**
- * removes "better-grades-div" and "better-wrapper" and create new ones with the updates values
- * @param {Object} data of the grade
- * @param {Object} keys for column values
- */
-function updateTable(data, keys) {
-  document.getElementsByClassName("better-wrapper")[0].remove();
-  document.getElementsByClassName("better-grades-div")[0].remove();
-  addNewTable(data, keys);
 }

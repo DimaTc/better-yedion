@@ -1,8 +1,7 @@
 .better-wrapper,
 .better-grades-div {
     width: 80%;
-    margin: auto;
-
+    margin: 8px auto;
 }
 
 .dist-grades {
@@ -42,9 +41,9 @@
     cursor: pointer;
     user-select: none;
     background: #dde;
+    margin: 8px 0;
     border-radius: .3em;
     box-shadow: 3px 3px 0 1px;
-    margin: 0 0 15px 0;
     font-weight: bold;
     text-align: center;
     color: #443;
