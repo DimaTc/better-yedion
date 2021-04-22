@@ -5,6 +5,8 @@ Currently, the extension enhances only the grade page.
 
 **For now, this extension only enhances the experience for the grade page. More features will be added when possible**
 
+![gif](https://raw.githubusercontent.com/DimaTc/better-yedion/master/graphics/demo.gif)
+
 ## Project Structure
 The project is divided into 3 sections: **Chrome-related code**, **Firefox-related code**, and **Graphics**.  
 For the time being, the Chrome folder and Firefox folder are almost the same, the only difference is the manifest file. In the future, It should be changed to a centralized code location, and when building the extension, it will automatically order the folders.
