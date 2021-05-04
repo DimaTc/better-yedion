@@ -14,8 +14,7 @@ For the time being, the Chrome folder and Firefox folder are almost the same, th
 
 ## Installation
 * Install from the Google Chrome Store:  
-    ***Will be updated once approved***
-
+    [Link to the store page](https://chrome.google.com/webstore/detail/nehgchjodohpeppngnpllobnngaablic)
 * Install locally:
     1. Clone the project 
     2. Open chrome's extension manager (URL - `chrome://extensions`)
